@@ -6,16 +6,15 @@
 export   function invertObj(obj) {
   if (obj!== undefined) {
     const ar = Object.entries(obj)
-    const handler = (acc, curr, index) => {
-      console.log('index', index);
-      console.log('curr1', curr[0]);
-      console.log('curr2', curr[1]);
-      acc[curr[1]] = curr[0];
-      console.log('acc', acc);
+    // const handler = (acc, curr, index) => {
+    //   acc[curr[1]] = curr[0];
+    //   return acc
+    // };
+    const handler = (acc, [first, second]) => {
+      acc[second] = first;
       return acc
     };
-
     const res = ar.reduce(handler, {})
     return res
-  } else return undefined
+  }
 }

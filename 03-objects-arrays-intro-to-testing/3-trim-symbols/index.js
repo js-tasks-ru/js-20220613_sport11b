@@ -13,16 +13,9 @@ export function trimSymbols(string, size)
   let ar = Array.from(string);
   let first_slice = ar.slice(0,size).join('');
   let rest_slice = ar.slice(size,);
-  console.log('first_slice', first_slice)
-  console.log('rest_slice', rest_slice)
-
   const handler = (acc,curr,index) =>
   {
-
     if (!acc.endsWith(curr.repeat(size))) {acc = acc + curr} else {acc};
-    console.log('index', index);
-    console.log('curr', curr);
-    console.log('acc', acc);
     return acc
   }
 
